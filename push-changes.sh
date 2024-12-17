@@ -15,8 +15,11 @@ if [ -d "$extract_folder" ]; then
   rm -rf "$extract_folder"
 fi
 
-# Extract the SB3 file (ZIP format)
-unzip "$sb3_file" -d "$extract_folder" || { echo "Extraction failed."; exit 1; }
+# Create extraction folder
+mkdir "$extract_folder"
+
+# Extract contents without nesting
+unzip -j "$sb3_file" -d "$extract_folder" || { echo "Extraction failed."; exit 1; }
 
 # Stage changes
 git add .
