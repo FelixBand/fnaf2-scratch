@@ -15,6 +15,7 @@ if [ -f "$output_file" ]; then
 
   # Handle response
   if [[ "$response" =~ ^[Yy]$ || -z "$response" ]]; then
+    rm "$output_file"
     zip -r "$output_file" "$input_folder"/*
     echo "File replaced successfully."
   else
