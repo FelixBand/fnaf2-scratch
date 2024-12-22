@@ -9,7 +9,7 @@ ren "Five Nights at Freddy's 2.zip" "Five Nights at Freddy's 2.sb3"
 
 git add .
 
-REM Commit changes with a timestamp
+REM Commit changes with a timestamp. Ignore the jank, I hate Windows
 for /f "tokens=2 delims==" %%a in ('"wmic OS Get localdatetime /value"') do set datetime=%%a
 set year=%datetime:~0,4%
 set month=%datetime:~4,2%
